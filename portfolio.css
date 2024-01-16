@@ -95,8 +95,57 @@ header {
     flex-shrink: 0;
     border-radius: 500px;
     border: 10px solid #BCF2F9;
-    background: url(<path-to-image>), cover no-repeat;
 
     margin-top: 70px;
     margin-right: 120px;
+
+    background: url(resources/static/recruit.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+}
+.greetingDetail {
+    background: linear-gradient(96deg, rgba(189, 210, 255, 0.40) 1.72%, rgba(116, 224, 215, 0.40) 158.93%);
+}
+.greetingDetail #shortIntro {
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 50px */
+    letter-spacing: -0.8px;
+    padding: 40px 80px 40px 80px;
+}
+.greetingDetail #longIntro {
+    color: #333;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 30px */
+    padding: 0px 80px 40px 80px;
+}
+.stackContainer {
+    display: flex;
+    padding: 30px 100px 30px 120px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.stackContainer p {
+    line-height: 150%; /* 50px */
+    text-align: center;
+}
+.stackContainer .stackImages #row1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    padding-top: 50px;
+    gap: 50px;
+}
+.stackContainer .stackImages #row2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap: 50px;
 }
