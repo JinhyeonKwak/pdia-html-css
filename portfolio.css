@@ -10,15 +10,36 @@ nav {
     align-items: center;
     padding: 0px 200px 0px 120px;
     gap: 40px;
-    height: 100px;;
+    height: 100px;
 }
 nav div {
     font-weight: 600;
     line-height: 150%; /* 30px */
 }
+.contact {
+    width: 165px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 10px solid #BBD5F7;
+    background: linear-gradient(98deg, #BED3FF -10.83%, #D2F3E5 51.79%, #FFEBD9 110.76%);
+
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+.contact p {
+    color: rgba(64, 57, 48, 0.80);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+}
 header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 .greeting {
     margin-left: 120px;
@@ -47,11 +68,23 @@ header {
     line-height: 125%; /* 80px */
     letter-spacing: -1.28px;
 }
-.greeting h1 em {
+.greeting span {
     background: linear-gradient(99deg, #001F8F 3.58%, rgba(36, 255, 203, 0.50) 90.34%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 .greeting .headerLinkContainer {
     display: flex;
@@ -106,15 +139,25 @@ header {
 }
 .greetingDetail {
     background: linear-gradient(96deg, rgba(189, 210, 255, 0.40) 1.72%, rgba(116, 224, 215, 0.40) 158.93%);
+    padding: 80px 80px 80px 80px;
 }
 .greetingDetail #shortIntro {
     color: #000;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 50px */
+    line-height: 125%; /* 50px */
     letter-spacing: -0.8px;
-    padding: 40px 80px 40px 80px;
+}
+.greetingDetail .posRelative {
+    position: relative;
+}
+.greetingDetail img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 48px;
+    left: 160px;
 }
 .greetingDetail #longIntro {
     color: #333;
@@ -122,7 +165,6 @@ header {
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 30px */
-    padding: 0px 80px 40px 80px;
 }
 .stackContainer {
     display: flex;
@@ -135,17 +177,36 @@ header {
     line-height: 150%; /* 50px */
     text-align: center;
 }
-.stackContainer .stackImages #row1 {
+.stackContainer .stackImages #row {
     display: flex;
     justify-content: center;
     align-items: center;   
     padding-top: 50px;
     gap: 50px;
 }
-.stackContainer .stackImages #row2 {
+.projectContainer {
+    padding: 30px 100px 30px 120px;
+    background-color: #BBD5F7;
+}
+.projectContainer .project {
     display: flex;
-    justify-content: center;
+    padding-left: 40px;
     align-items: center;
-    padding-top: 50px;
-    gap: 50px;
+    gap: 40px;
+    align-self: stretch;
+}
+.projectContainer .project .desc {
+    display: block;
+}
+.projectContainer .project .link a {
+    color: #405BA1;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 30px */
+    text-decoration-line: underline;
+}
+.projectContainer .project img {
+    width: 100px;
+    height: 200px;
 }
