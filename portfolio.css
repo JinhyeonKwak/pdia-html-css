@@ -12,6 +12,12 @@ nav {
     gap: 40px;
     height: 100px;
 }
+@media screen and (max-width: 1280px) {
+    nav {
+        padding-left: 0px;
+        gap: 20px;
+    }
+}
 nav div {
     font-weight: 600;
     line-height: 150%; /* 30px */
@@ -40,9 +46,20 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    min-width: 390px;
+}
+@media screen and (max-width: 1080px) {
+    header .myPhoto {
+        display: none;
+    }
 }
 .greeting {
     margin-left: 120px;
+}
+@media screen and (max-width: 800px) {
+    .greeting {
+        margin-left: 0px;
+    }
 }
 .greeting .badge {
     padding: 12px 24px;
@@ -62,25 +79,29 @@ header {
 }
 .greeting h1 {
     color: #333;
-    font-size: 64px;
+    font-size:64px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%; /* 80px */
     letter-spacing: -1.28px;
 }
-.greeting span {
-    background: linear-gradient(99deg, #001F8F 3.58%, rgba(36, 255, 203, 0.50) 90.34%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+@media screen and (max-width: 850px) {
+    .greeting h1 {
+        font-size: 8vw;
+    }
+}
+.greeting h1 em {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+        typing 3.5s steps(40, end);
+
+    background: linear-gradient(99deg, #001F8F 3.58%, rgba(36, 255, 203, 0.50) 90.34%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 @keyframes typing {
     from { width: 0 }
@@ -90,6 +111,11 @@ header {
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+@media screen and (max-width: 850px) {
+    .greeting .headerLinkContainer {
+        flex-direction: column;
+    }
 }
 .greeting .githubLink {
     color: white;
@@ -159,12 +185,17 @@ header {
     bottom: 48px;
     left: 160px;
 }
+@media screen and (max-width: 800px) {
+    .greetingDetail img {
+        display: none;
+    }
+}
 .greetingDetail #longIntro {
     color: #333;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
 }
 .stackContainer {
     display: flex;
@@ -174,29 +205,67 @@ header {
     align-items: center;
 }
 .stackContainer p {
-    line-height: 150%; /* 50px */
+    line-height: 150%;
     text-align: center;
 }
-.stackContainer .stackImages #row {
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+.stackContainer .stackImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
     padding-top: 50px;
     gap: 50px;
 }
+@media screen and (max-width: 1280px) {
+    .stackContainer .stackImages {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        align-items: center;   
+        padding-top: 50px;
+        gap: 50px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .stackContainer .stackImages svg {
+        width: 60px;
+        height: 60px;
+        gap: 20px;
+    }
+}
 .projectContainer {
     padding: 30px 100px 30px 120px;
-    background-color: #BBD5F7;
+}
+.projectContainer h2 {
+    padding-left: 35px;
 }
 .projectContainer .project {
     display: flex;
+    justify-content: space-around;
     padding-left: 40px;
     align-items: center;
     gap: 40px;
     align-self: stretch;
+    background-color: #BBD5F7;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 24px;
+
+    min-width: 390px;
+}
+@media screen and (max-width: 1280px) {
+    .projectContainer {
+        padding: 0px;
+    }
+    .projectContainer .project {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
 }
 .projectContainer .project .desc {
     display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .projectContainer .project .link a {
     color: #405BA1;
@@ -206,7 +275,22 @@ header {
     line-height: 150%; /* 30px */
     text-decoration-line: underline;
 }
+.projectContainer .project .col2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    gap: 20px;
+}
+@media screen and (max-width: 1280px) {
+    .projectContainer .project .col2 {
+        width: 100%;
+    }
+}
 .projectContainer .project img {
-    width: 100px;
-    height: 200px;
+    height: 80%; 
+    width: 25%;
+    object-fit: contain;
+    border-radius: 16.08px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
