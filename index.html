@@ -31,7 +31,7 @@
         <div class="greeting">
             <div class="badge">👋 안녕하세요!</div>
             <h1>신입 백엔드 개발자.<br>
-            <em>Problem Solver.</em><br>
+            <em class="emphasis" id="typewriter"></em><br>
             곽진현입니다.
             </h1>
             <div class="headerLinkContainer">
@@ -247,6 +247,16 @@
                     'event_category': 'click_resume_link',
                     'event_label': 'click_resume_link',
                 })
+            }
+        }
+        var i = 0;
+        var txt = 'Problem Solver.';
+        var speed = 80;
+        window.onload = function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("typewriter").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
             }
         }
     </script>
